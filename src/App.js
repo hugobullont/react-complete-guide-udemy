@@ -21,6 +21,14 @@ class App extends Component {
       { name: 'Rebeca', age:20 }
     ] });
   }
+
+  nameChangeHandler = (event) => {
+    this.setState({persons: [
+      { name: 'Hugo', age: 21 },
+      { name: event.target.value, age: 19 },
+      { name: 'Rebeca', age:20 }
+    ] });
+  }
   //can use arrow funtions inside onClick but is better use .bind
   render() {
      return (
@@ -34,7 +42,8 @@ class App extends Component {
          <Person 
             name={this.state.persons[1].name} 
             age={this.state.persons[1].age}
-            click={this.switchNameHandler.bind(this,'Hugo!')}>My Hobbies: Racing</Person>
+            click={this.switchNameHandler.bind(this,'Hugo!')}
+            changed={this.nameChangeHandler}>My Hobbies: Racing</Person>
          <Person 
             name={this.state.persons[2].name} 
             age={this.state.persons[2].age}/>
