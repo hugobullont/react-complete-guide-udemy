@@ -31,7 +31,10 @@ class App extends Component {
   }
   //can use arrow funtions inside onClick but is better use .bind
   render() {
-     return (
+    const style = {
+    };
+
+    return (
        <div className="App">
          <h1>Hi, I'm a React App</h1>
          <p>This is really working!</p>
